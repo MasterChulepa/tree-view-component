@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'scss/vars' as *;
+@use 'scss/fonts' as *;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-light: #{lighten($color-primary, 50%)};
+  --color-basic: #{$color-basic};
+  --color-red-light: #{$color-red-light};
+}
+
+* {
+  font-family: #{$font-primary};
+}
