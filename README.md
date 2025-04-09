@@ -1,1 +1,1 @@
-A simple Angulartree component
+A simple Angular tree component
