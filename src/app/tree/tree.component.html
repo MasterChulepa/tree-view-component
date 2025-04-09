@@ -11,7 +11,7 @@
           >
         </button>
         @if (node.expanded) {
-          <div class="children">
+          <div @expandCollapse class="children">
             <app-tree [treeData]="node.children" />
           </div>
         }

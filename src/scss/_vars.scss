@@ -1,3 +1,7 @@
-$color-red-light: #d62e2f;
+$color-red: #d62e2f;
 $color-basic: #ebebeb;
 $color-primary: #363434;
+
+$indent-base: 0.5rem;
+$indent-element: $indent-base * 3;
+$indent-section: $indent-base * 4;

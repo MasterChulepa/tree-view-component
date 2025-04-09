@@ -6,7 +6,10 @@ import { treeNodes } from './mockData';
   selector: 'app-root',
   standalone: true,
   template: `
-    <h1>Tree View Component</h1>
+    <div class="header-container">
+      <div class="badge"></div>
+      <h1>Tree View Component</h1>
+    </div>
     <app-tree [treeData]="treeNodes"></app-tree>
   `,
   imports: [TreeComponent],

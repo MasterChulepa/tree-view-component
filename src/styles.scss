@@ -1,11 +1,18 @@
 @use 'scss/vars' as *;
 @use 'scss/fonts' as *;
+@use 'sass:color';
 
 :root {
   --color-primary: #{$color-primary};
-  --color-primary-light: #{lighten($color-primary, 50%)};
+  --color-primary-light: #{color.scale($color-primary, $lightness: 50%)};
   --color-basic: #{$color-basic};
-  --color-red-light: #{$color-red-light};
+  --color-red: #{$color-red};
+  --color-red-dark: #{color.scale($color-red, $lightness: -20%)};
+  --color-red-light: #{color.scale($color-red, $lightness: 95%)};
+
+  --indent-base: #{$indent-base};
+  --indent-element: #{$indent-element};
+  --indent-section: #{$indent-section};
 }
 
 * {
