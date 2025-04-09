@@ -1,0 +1,60 @@
+.tree {
+  --node-font-size: 24px;
+  --node-icon-size: 18px;
+
+  list-style-type: none;
+  padding-left: var(--indent-element);
+  position: relative;
+  margin: var(--indent-base) 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--indent-section);
+    width: 1px;
+    background-color: var(--color-basic);
+  }
+}
+
+.tree-node {
+  position: relative;
+  padding-left: var(--indent-element);
+  margin: var(--indent-base) 0;
+  .children {
+    will-change: height, opacity;
+  }
+}
+
+.tree-node-content {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  font-size: var(--node-font-size);
+  padding: var(--indent-base) var(--indent-element);
+  background-color: white;
+  color: var(--color-primary);
+  border: none;
+
+  .toggle-icon {
+    font-size: var(--node-icon-size);
+    margin-right: var(--indent-base);
+    color: var(--color-red);
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: var(--color-red-light);
+    transform: translateX(2px);
+    transition: transform 0.2s;
+
+    .toggle-icon {
+      color: var(--color-red-dark);
+    }
+  }
+}
+
+.is-inactive {
+  text-decoration: line-through;
+  color: var(--color-primary-light);
+}

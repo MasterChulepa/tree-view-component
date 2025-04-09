@@ -1,0 +1,21 @@
+@if (treeData && treeData.length > 0) {
+  <ul class="tree">
+    @for (node of treeData; track node.id) {
+      <li class="tree-node">
+        <button class="tree-node-content" (click)="node.expanded = !node.expanded">
+          @if (node.children && node.children.length > 0) {
+            <span class="toggle-icon"> {{ node.expanded ? '▼' : '▲' }}</span>
+          }
+          <span [ngClass]="{ 'is-inactive': node.is_deleted }" class="tree-node-title"
+            >{{ node.id }} - {{ node.title }}</span
+          >
+        </button>
+        @if (node.expanded) {
+          <div @expandCollapse class="children">
+            <app-tree [treeData]="node.children" />
+          </div>
+        }
+      </li>
+    }
+  </ul>
+}
